@@ -129,6 +129,7 @@
 			$.getJSON('https://helpunicorn.pythonanywhere.com/kdd-info/' + url, function(data) {
 				document.getElementById('title').innerHTML += `${data[0].username} (${data[0].name})`
 				document.getElementById('user').innerHTML += data[0].username
+				document.title = `Электронная волонтерская книжка пользователя ${data[0].username} | Книга добрых дел`
 				if (data.length != 1) {
 					for (i = 1; i < data.length; i++) {
 						const div = document.createElement('div');
