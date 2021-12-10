@@ -125,7 +125,8 @@
 		</script>
 		
 		<script>
-			$.getJSON('https://helpunicorn.pythonanywhere.com/kdd-info/aadev151', function(data) {
+			var url = window.location.href.slice(42)
+			$.getJSON('https://helpunicorn.pythonanywhere.com/kdd-info/' + url, function(data) {
 				document.getElementById('title').innerHTML += `${data[0].username} (${data[0].name})`
 				document.getElementById('user').innerHTML += data[0].username
 				if (data.length != 1) {
